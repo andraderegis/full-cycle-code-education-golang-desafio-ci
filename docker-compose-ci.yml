@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+    golang_desafio_ci:
+        build: .
+        container_name: golang_desafio_ci
+        volumes:
+            - .:/go/src/golang-fullcycle-desafio-ci
+        networks: 
+            - desafio-go-ci
+
+networks: 
+    desafio-go-ci:
+        driver: bridge
+
