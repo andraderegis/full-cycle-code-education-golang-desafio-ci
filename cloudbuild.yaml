@@ -1,4 +1,7 @@
 steps:
+    - id: 'List'
+      name: golang
+      args: ['ls', '-lah']
     - id: 'Running Unit Tests'
       name: golang
       args: ['go', 'test', 'tests/arithmetics_test.go']
