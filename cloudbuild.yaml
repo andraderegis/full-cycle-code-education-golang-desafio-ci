@@ -2,4 +2,4 @@ steps:
     - id: 'Running Unit Tests'
       name: golang
       args: ['go', 'test', 'tests/arithmetics_test.go']
-      env: ['GOPATH=workspace']
+      env: ['GOPATH=/workspace']
