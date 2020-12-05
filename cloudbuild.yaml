@@ -1,4 +1,7 @@
 steps:
+    - id: 'PWD'
+      name: golang
+      args: ['pwd']
     - id: 'List'
       name: golang
       args: ['ls', '-lah']
