@@ -4,7 +4,7 @@ steps:
     args: ['ls', '-lah']
   - id: 'Build app'
     name: golang
-    args: ['go', 'build', '-o', 'desafio_ci', '-i', ./src/golang-fullcycle-desafio-ci/main.go]
+    args: ['go', 'build', '-o', 'desafio_ci', '-i', 'main.go']
     env: ['GOPATH=/go']
   - id: 'Running Unit Tests'
     name: golang
