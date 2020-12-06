@@ -1,4 +1,8 @@
 steps:
+    - id: 'List workspace dir'
+      name: golang
+      args: ['ls', '-lah', '/workspace']
+      env: ['GOPATH=/workspace']
     - id: 'Move Files to src'
       name: golang
       args: ['mv', '/workspace/*', '/workspace/src/golang-fullcycle-desafio-ci']
