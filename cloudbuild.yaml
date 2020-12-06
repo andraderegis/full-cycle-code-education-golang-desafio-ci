@@ -1,13 +1,20 @@
 steps:
-    - id: 'Running docker compose'
-      name: 'docker/compose'
-      args: ['-f', 'docker-compose-ci.yml', 'up', '-d']
-      env: ['GOPATH=/go']
-    - id: 'Running Unit Tests'
-      name: docker
-      args: ['exec', '-t', 'golang_desafio_ci', 'go', 'test', 'tests/arithmetics_test.go']
-      env: ['GOPATH=/go']
-
+  - id: 'Build app'
+    name: golang
+    args: ['go', 'build', '-o', 'desafio_ci', '-i', ./src/golang-fullcycle-desafio-ci/main.go]
+    env: ['GOPATH=/go']
+  - id: 'Running Unit Tests'
+    name: golang
+    args: ['go', 'test', 'tests/arithmetics_test.go']
+    env: ['GOPATH=/go']
+    # - id: 'Running docker compose'
+    #   name: 'docker/compose'
+    #   args: ['-f', 'docker-compose-ci.yml', 'up', '-d']
+    #   env: ['GOPATH=/go']
+    # - id: 'Running Unit Tests'
+    #   name: docker
+    #   args: ['exec', '-t', 'golang_desafio_ci', 'go', 'test', 'tests/arithmetics_test.go']
+    #   env: ['GOPATH=/go']
     # - id: 'List workspace dir'
     #   name: golang
     #   args: ['ls', '-lah', '/workspace']
