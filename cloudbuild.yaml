@@ -2,9 +2,11 @@ steps:
   - id: 'PWD repository folder'
     name: golang
     args: ['pwd']
+    env: ['GOPATH=/go']
   - id: 'List repository folder'
     name: golang
     args: ['ls', '-lah']
+    env: ['GOPATH=/go']
   - id: 'Build app'
     name: golang
     args: ['go', 'build', '-o', 'desafio_ci', '-i', 'main.go']
