@@ -1,4 +1,7 @@
 steps:
+  - id: 'PWD repository folder'
+    name: golang
+    args: ['pwd']
   - id: 'List repository folder'
     name: golang
     args: ['ls', '-lah']
