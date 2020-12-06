@@ -3,6 +3,11 @@ steps:
       name: 'docker/compose'
       args: ['-f', 'docker-compose-ci.yml', 'up', '-d']
       env: ['GOPATH=/go']
+    - id: 'Running Unit Tests'
+      name: docker
+      args: ['exec', '-t', 'golang_desafio_ci', 'go', 'test', 'tests/arithmetics_test.go']
+      env: ['GOPATH=/go']
+
     # - id: 'List workspace dir'
     #   name: golang
     #   args: ['ls', '-lah', '/workspace']
