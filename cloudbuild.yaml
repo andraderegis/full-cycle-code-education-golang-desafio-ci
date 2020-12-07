@@ -5,7 +5,7 @@ steps:
     env: ['GOPATH=/go']
   - id: 'Move project code to go workspace'
     name: golang
-    args: ['mv', '-R', '/workspace/*']
+    args: ['mv', '/workspace/*', '/go/src/golang-fullcycle-desafio-ci']
     env: ['GOPATH=/go']
   - id: 'List golang-fullcycle-desafio-ci dir'
     name: golang
