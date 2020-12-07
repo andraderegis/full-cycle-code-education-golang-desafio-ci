@@ -6,13 +6,6 @@ steps:
   #   name: golang
   #   args: ['go', 'build', 'cmd/.']
   #   env: ['GOPATH=/workspace']
-  - id: "Init arithmetics module"
-    name: golang
-    args: ['go', 'mod', 'init', 'arithmetics']
-  - id: 'List arithmetics dir'
-    name: golang
-    args: ['ls', '-lah', 'arithmetics']
-    # env: ['GOPATH=/workspace']
   - id: 'Running Unit Tests'
     name: golang
     args: ['go', 'test', './...']
