@@ -2,15 +2,15 @@ steps:
   - id: 'Init'
     name: golang
     args: ['go', 'mod', 'init', 'github.com/andraderegis/full-cycle-code-education-golang-desafio-ci']
+  - id: 'List workspace files'
+    name: golang
+    args: ['ls', '-lah']
   - id: 'Build app'
     name: golang
     args: ['go', 'build', '.']
   - id: 'Pwd app dir'
     name: golang
     args: ['pwd']
-  - id: 'List workspace files'
-    name: golang
-    args: ['ls', '-lah']
   # - id: 'Create project folder into go workspace'
   #   name: golang
   #   args: ['mkdir', '-p', '/go/src/golang-fullcycle-desafio-ci']
