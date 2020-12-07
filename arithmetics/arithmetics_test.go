@@ -1,4 +1,4 @@
-package tests
+package arithmetics
 
 import (
 	utils "golang-fullcycle-desafio-ci/utils"
