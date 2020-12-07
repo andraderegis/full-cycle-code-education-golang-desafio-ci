@@ -9,13 +9,9 @@ steps:
   - id: "Init arithmetics module"
     name: golang
     args: ['go', 'mod', 'init', 'arithmetics']
-  - id: 'Pwd app dir'
+  - id: 'List arithmetics dir'
     name: golang
-    args: ['pwd']
-    # env: ['GOPATH=/workspace']
-  - id: 'List workspace files'
-    name: golang
-    args: ['ls', '-lah']
+    args: ['ls', '-lah', 'arithmetics']
     # env: ['GOPATH=/workspace']
   - id: 'Running Unit Tests'
     name: golang
