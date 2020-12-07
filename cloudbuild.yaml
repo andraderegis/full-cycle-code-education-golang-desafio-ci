@@ -1,12 +1,19 @@
 steps:
+  - id: 'Init'
+    name: golang
+    args: ['go', 'mod', 'init', 'go']
   - id: 'Build app'
     name: golang
-    args: ['go', 'build']
-    env: ['GOPATH=/workspace']
+    args: ['go', 'build', '.']
+    env: ['GOPATH=/go']
+  - id: 'Pwd app dir'
+    name: golang
+    args: ['pwd']
+    env: ['GOPATH=/go']
   - id: 'List workspace files'
     name: golang
     args: ['ls', '-lah']
-    env: ['GOPATH=/workspace']
+    env: ['GOPATH=/go']
   # - id: 'Create project folder into go workspace'
   #   name: golang
   #   args: ['mkdir', '-p', '/go/src/golang-fullcycle-desafio-ci']
@@ -20,7 +27,7 @@ steps:
   - id: 'Running Unit Tests'
     name: golang
     args: ['go', 'test', './...']
-    env: ['GOPATH=/workspace']
+    env: ['GOPATH=/go']
     # - id: 'Running docker compose'
     #   name: 'docker/compose'
     #   args: ['-f', 'docker-compose-ci.yml', 'up', '-d']
