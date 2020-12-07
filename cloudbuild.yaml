@@ -1,4 +1,8 @@
 steps:
+  - id: 'List repository folder'
+    name: golang
+    args: ['ls', '-lah']
+    env: ['GOPATH=/workspace']
   - id: 'Running Unit Tests'
     name: golang
     args: ['go', 'test', './...']
