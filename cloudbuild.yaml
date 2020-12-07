@@ -1,23 +1,8 @@
 steps:
-  - id: 'List /go/src'
-    name: golang
-    args: ['ls', '-lah', '/go/src/']
-  - id: 'PWD repository folder'
-    name: golang
-    args: ['pwd']
-    env: ['GOPATH=/go']
-  - id: 'List repository folder'
-    name: golang
-    args: ['ls', '-lah']
-    env: ['GOPATH=/go']
-  - id: 'Build app'
-    name: golang
-    args: ['go', 'build', '-o', 'desafio_ci', '-i', 'main.go']
-    env: ['GOPATH=/go']
   - id: 'Running Unit Tests'
     name: golang
-    args: ['go', 'test', 'tests/arithmetics_test.go']
-    env: ['GOPATH=/go']
+    args: ['go', 'test', './...']
+    env: ['GOPATH=/workspace']
     # - id: 'Running docker compose'
     #   name: 'docker/compose'
     #   args: ['-f', 'docker-compose-ci.yml', 'up', '-d']
