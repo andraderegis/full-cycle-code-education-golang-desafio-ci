@@ -11,7 +11,7 @@ steps:
   - id: 'List workspace files'
     name: golang
     args: ['ls', '-lah']
-  - id: 'List workspace files'
+  - id: 'List golang-fullcycle-desafio-ci files'
     name: golang
     args: ['ls', '-lah', 'golang-fullcycle-desafio-ci']
 
