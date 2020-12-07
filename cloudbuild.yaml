@@ -1,7 +1,8 @@
 steps:
   - id: 'Init'
     name: golang
-    args: ['go', 'mod', 'init', 'go']
+    args: ['go', 'mod', 'init', 'golang-fullcycle-desafio-ci']
+    env: ['GOPATH=/go']
   - id: 'Build app'
     name: golang
     args: ['go', 'build', '.']
