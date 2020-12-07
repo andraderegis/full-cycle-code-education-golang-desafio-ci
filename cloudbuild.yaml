@@ -2,9 +2,9 @@ steps:
   - id: 'Create Go Workspace Source'
     name: 'docker'
     args: ['mkdir', '-p', '/go/src/golang-fullcycle-desafio-ci']
-  - id: 'Move Project Code to Go Workspace Source'
+  - id: 'Copy Project Code to Go Workspace Source'
     name: 'docker'
-    args: ['mv', '-fuv', '/workspace/* /go/src/golang-fullcycle-desafio-ci/']
+    args: ['cp', '-R', '/workspace/* /go/src/golang-fullcycle-desafio-ci/']
   - id: 'List files'
     name: 'docker'
     args: ['ls', '-lah', '/go/src/golang-fullcycle-desafio-ci']
