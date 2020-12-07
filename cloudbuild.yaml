@@ -5,16 +5,12 @@ steps:
   - id: 'Build app'
     name: golang
     args: ['go', 'build', 'cmd/.']
-    env: ['GOPATH=/go']
   - id: 'Pwd app dir'
     name: golang
     args: ['pwd']
-    env: ['GOPATH=/go']
   - id: 'List workspace files'
     name: golang
     args: ['ls', '-lah']
-    env: ['GOPATH=/go']
   - id: 'Running Unit Tests'
     name: golang
     args: ['go', 'test', './...']
-    env: ['GOPATH=/go']
