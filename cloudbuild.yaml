@@ -1,8 +1,14 @@
 steps:
-  - id: 'Build app'
-    name: golang
-    args: ['go', 'build', 'cmd/.']
-  - id: 'Running Unit Tests'
-    name: golang
-    args: ['go', 'test', './...']
-    env: ['GOPATH=/workspace/src']
+  - id: 'List files'
+    name: 'docker'
+    args: ['ls', '-lah']
+  - id: 'Pwd dir'
+    name: 'docker'
+    args: ['pwd']
+  # - id: 'Build app'
+  #   name: golang
+  #   args: ['go', 'build', 'cmd/.']
+  # - id: 'Running Unit Tests'
+  #   name: golang
+  #   args: ['go', 'test', './...']
+  #   env: ['GOPATH=/workspace']
