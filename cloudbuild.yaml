@@ -14,4 +14,3 @@ steps:
   - id: 'Running Unit Tests'
     name: golang
     args: ['go', 'test', './...']
-    env: ['GOPATH=/go']
