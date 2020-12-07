@@ -1,4 +1,7 @@
 steps:
+  - id: 'Build app'
+    name: golang
+    args: ['go', 'build']
   - id: 'List workspace files'
     name: golang
     args: ['ls', '-lah']
