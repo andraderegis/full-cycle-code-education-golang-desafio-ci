@@ -2,6 +2,9 @@ steps:
   - id: 'List workspace files'
     name: golang
     args: ['ls', '-lah']
+  - id: 'pwd workspace files'
+    name: golang
+    args: ['ls', '-lah']
   - id: 'Create project folder into go workspace'
     name: golang
     args: ['mkdir', '-p', '/go/src/golang-fullcycle-desafio-ci']
