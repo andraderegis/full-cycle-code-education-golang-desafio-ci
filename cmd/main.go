@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	arithmetics "github.com/andraderegis/golang-fullcycle-desafio-ci/arithmetics"
+	arithmetics "golang-fullcycle-desafio-ci/arithmetics"
 )
 
 func main() {
