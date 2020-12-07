@@ -6,9 +6,9 @@ steps:
   #   name: golang
   #   args: ['go', 'build', 'cmd/.']
   #   env: ['GOPATH=/workspace']
-  - id: "Running docker compose"
-    name: "docker/compose"
-    args: ['-f', 'docker-compose-ci.yml', 'up', '-d']
+  - id: "Init arithmetics module"
+    name: golang
+    args: ['go', 'mod', 'init', './arithmetics']
   - id: 'Pwd app dir'
     name: golang
     args: ['pwd']
