@@ -10,7 +10,7 @@ steps:
     args: ['mkdir', '-p', '/go/src/golang-fullcycle-desafio-ci']
   - id: 'Move project code to go workspace'
     name: golang
-    args: ['mv', '/workspace/*', '/go/src/golang-fullcycle-desafio-ci']
+    args: ['mv', '/workspace', '/go/src/golang-fullcycle-desafio-ci']
   - id: 'List golang-fullcycle-desafio-ci dir'
     name: golang
     args: ['ls', '-lah', '/go/src/golang-fullcycle-desafio-ci']
