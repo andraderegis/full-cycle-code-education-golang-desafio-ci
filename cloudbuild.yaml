@@ -8,7 +8,7 @@ steps:
   #   env: ['GOPATH=/workspace']
   - id: "Init arithmetics module"
     name: golang
-    args: ['go', 'mod', 'init', './arithmetics']
+    args: ['go', 'mod', 'init', 'arithmetics']
   - id: 'Pwd app dir'
     name: golang
     args: ['pwd']
