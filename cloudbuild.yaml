@@ -2,18 +2,16 @@ steps:
   - id: "Running docker compose"
     name: "docker/compose"
     args: ['-f', 'docker-compose-ci.yml', 'up', '-d']
-  - id: 'Create Go Workspace Source'
-    name: 'docker'
-    args: ['exec', '-t', 'golang_desafio_ci', 'mkdir', '-p', '/go/src/golang-fullcycle-desafio-ci']
-  - id: 'List Go Workspace Files'
-    name: 'docker'
-    args: ['exec', '-t', 'golang_desafio_ci', 'ls', '-lah', '/go/src/golang-fullcycle-desafio-ci']
-  - id: 'Copy Project Code to Go Workspace Source'
-    name: 'docker'
-    args: ['exec', '-t', 'golang_desafio_ci', 'cp', '-R', '/workspace/*', '/go/src/golang-fullcycle-desafio-ci/']
-  - id: 'List files'
-    name: 'docker'
-    args: ['exec', '-t', 'golang_desafio_ci', 'ls', '-lah', '/go/src/golang-fullcycle-desafio-ci']
+  - id: 'Running Unit Tests'
+    name: golang
+    args: ['go', 'test', './...']
+    env: ['GOPATH=/go']
+  # - id: 'Create Go Workspace Source'
+  #   name: 'docker'
+  #   args: ['exec', '-t', 'golang_desafio_ci', 'mkdir', '-p', '/go/src/golang-fullcycle-desafio-ci']
+  # - id: 'List Go Workspace Files'
+  #   name: 'docker'
+  #   args: ['exec', '-t', 'golang_desafio_ci', 'ls', '-lah', '/go/src/golang-fullcycle-desafio-ci']
   # - id: 'Build app'
   #   name: golang
   #   args: ['go', 'build', 'cmd/.']
