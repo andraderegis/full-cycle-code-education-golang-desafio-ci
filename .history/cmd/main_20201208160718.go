@@ -1,9 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	arithmetics "golang-fullcycle-desafio-ci/arithmetics"
-	"time"
+	"os"
 )
 
 func main() {
@@ -11,7 +12,17 @@ func main() {
 
 	fmt.Printf("The value sum of 5 + 5 is: %v\n", sum)
 
+	fmt.Println("To exit, type 'exit'")
+	reader := bufio.NewReader(os.Stdin)
+
 	for {
-		time.Sleep(1000 * time.Millisecond)
+		fmt.Print("=> ")
+
+		text, _ := reader.ReadString('\n')
+
+		switch text {
+		case "exit":
+			os.Exit(0)
+		}
 	}
 }
