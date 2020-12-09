@@ -11,17 +11,3 @@ steps:
 substitutions:
   _GOLANG_FULLCYCLE_DESAFIO_CI_VERSION: 1.0.0
 images: ['gcr.io/$PROJECT_ID/golang-fullcycle-desafio-ci:${_GOLANG_FULLCYCLE_DESAFIO_CI_VERSION}']
-  
-  # - id: 'Create Go Workspace Source'
-  #   name: 'docker'
-  #   args: ['exec', '-t', 'golang_desafio_ci', 'mkdir', '-p', '/go/src/golang-fullcycle-desafio-ci']
-  # - id: 'List Go Workspace Files'
-  #   name: 'docker'
-  #   args: ['exec', '-t', 'golang_desafio_ci', 'ls', '-lah', '/go/src/golang-fullcycle-desafio-ci']
-  # - id: 'Build app'
-  #   name: golang
-  #   args: ['go', 'build', 'cmd/.']
-  # - id: 'Running Unit Tests'
-  #   name: golang
-  #   args: ['go', 'test', './...']
-  #   env: ['GOPATH=/workspace']
