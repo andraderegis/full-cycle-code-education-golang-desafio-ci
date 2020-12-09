@@ -8,7 +8,6 @@ services:
             - .:/go/src/golang-fullcycle-desafio-ci
         networks: 
             - desafio-go-ci
-
 networks: 
     desafio-go-ci:
         driver: bridge
