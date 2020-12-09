@@ -7,7 +7,7 @@ steps:
     args: ['exec', '-t', 'golang_desafio_ci', 'go', 'test', './...']
   - id: 'Push Image'
     name: 'docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/golang-fullcycle-desafio-ci:${_GOLANG_FULLCYCLE_DESAFIO_CI_VERSION}', 'docker-compose-ci.yml']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/golang-fullcycle-desafio-ci:${_GOLANG_FULLCYCLE_DESAFIO_CI_VERSION}', '.']
 substitutions:
   _GOLANG_FULLCYCLE_DESAFIO_CI_VERSION: 1.0.0
 images: ['gcr.io/$PROJECT_ID/golang-fullcycle-desafio-ci:${_GOLANG_FULLCYCLE_DESAFIO_CI_VERSION}']
